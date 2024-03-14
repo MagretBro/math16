@@ -1,4 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { ModalComponent } from '../modal/modal.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-level',
@@ -12,8 +14,18 @@ export class LevelComponent {
   multiplicationExamples: string[] = [];
   currentExampleIndex: number = 0;
   userAnswer: string | null = null;
+  correctAnswers: number = 0;
+  squares: number[] = Array(10).fill(0);
+  correctAnswersCount: number = 0;
+  scaleItems: number[] = Array(10).fill(0);
+  showModal: boolean = false;
+
+
 
 @ViewChild('userAnswerInput') userAnswerInput!: ElementRef;
+@ViewChild('modalContainer', { read: ViewContainerRef }) modalContainer!: ViewContainerRef;
+
+constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
   ngAfterViewInit() {
     if (this.userAnswerInput) {
@@ -49,12 +61,19 @@ export class LevelComponent {
     }
   }
 
+
   checkAnswer() {
     if (this.userAnswer === eval(this.multiplicationExamples[this.currentExampleIndex])) {
       this.currentExampleIndex++;
+      this.correctAnswersCount++;
       this.userAnswer = null;
       if (this.currentExampleIndex === this.multiplicationExamples.length) {
-        alert("Лерочка молодец");
+        if (this.correctAnswersCount >= 10) {
+          this.showModal = true;
+          this.loadModalComponent();
+        } else {
+          alert("Лерочка молодец");
+        }
       }
     } else {
       alert("Эээээ. А если подумать?");
@@ -66,4 +85,21 @@ export class LevelComponent {
       this.checkAnswer();
     }
   }
+
+
+  onModalClosed(answer: boolean) {
+    if (answer) {
+      // Переход на следующий уровень или другие действия при выборе "Да"
+    } else {
+      // Переход на главную страницу или другие действия при выборе "Главная страница"
+    }
+    this.showModal = false;
+  }
+
+  loadModalComponent() {
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+    this.modalContainer.clear();
+    const componentRef = this.modalContainer.createComponent(componentFactory);
+  }
+
 }

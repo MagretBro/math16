@@ -10,6 +10,7 @@ import { LevelComponent } from './components/level/level.component';
 import { GameComponent } from './components/game/game.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainComponent,
     LevelComponent,
     GameComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -28,5 +30,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
