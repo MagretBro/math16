@@ -1,0 +1,59 @@
+.example-button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.myclass {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.myclass:first-of-type {
+  margin-right: 50px;
+}
+
+.myclass:last-of-type {
+  margin-left: 50px;
+}
+
+/* Для десктопных устройств */
+@media (min-width: 768px) {
+  .example-button-row button {
+    width: 300px;
+    height: 200px;
+    font-size: 42px;
+  }
+}
+
+/* Для планшетов */
+@media (min-width: 480px) and (max-width: 767px) {
+  .example-button-row button {
+    width: 200px;
+    height: 150px;
+    font-size: 24px;
+  }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 479px) {
+  .example-button-row button {
+    width: 150px;
+    height: 100px;
+    font-size: 22px;
+  }
+}
+
+.example-button-row button {
+  color: #7e53db !important;
+  background: #ffffff linear-gradient(to bottom, #cae7aa 5%, #42d2a7 100%);
+
+}
