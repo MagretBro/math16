@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { GameComponent } from './components/game/game.component';
 import { LevelComponent } from './components/level/level.component';
 import { MainComponent } from './components/main/main.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
-
-const routes: Routes = [
-{ path: '', component: MainComponent},
-{ path: 'game', component: GameComponent},
-{ path: 'level', component: LevelComponent}
-
-];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot([
+    { path: '', component: MainComponent},
+    { path: 'game', component: GameComponent},
+    { path: 'level', component: LevelComponent},
+    { path: 'sign-in', component: SignInComponent}
+    
+    ])
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
