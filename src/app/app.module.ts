@@ -17,6 +17,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import {NgIf} from '@angular/common';
+import { RegistComponent } from './components/regist/regist.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {NgIf} from '@angular/common';
     GameComponent,
     ToolbarComponent,
     ModalComponent,
-    SignInComponent
+    SignInComponent,
+    RegistComponent
   ],
   imports: [
     BrowserModule,
