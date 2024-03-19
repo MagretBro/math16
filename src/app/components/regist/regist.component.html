@@ -1,9 +1,54 @@
 
 <div class="example-button-row">
     <div class="example-container">
+        <div class="head_form">Страница регистрации</div>
+    </div>
+    <div class="example-container">
+        <mat-form-field hintLabel="Max 10 characters">
+          <mat-label>Enter your name</mat-label>
+          <input matInput #input maxlength="10" placeholder="Ex. Nougat">
+          <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="example-container">
+        <mat-form-field class="font">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="example-container">
+        <mat-form-field class="font">
+            <mat-label>Enter your password</mat-label>
+            <input matInput type="password" placeholder="Password" [formControl]="password" required>
+            <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
+        </mat-form-field>
+    </div>
+    
+    <div class="example-container">
+        <mat-form-field class="font">
+            <mat-label>Repeat your password</mat-label>
+            <input matInput type="password" placeholder="Password" [formControl]="confirmPassword" required>
+            <!-- <mat-error *ngIf="confirmPassword.errors">{{ getConfirmPasswordErrorMessage() }}</mat-error> -->
+            <mat-error *ngIf="confirmPassword.invalid">{{ getConfirmPasswordErrorMessage() }}</mat-error>
+
+        </mat-form-field>
+    </div>
+
+    <div class="example-container">
+        <button class="font_reg" mat-raised-button color="primary" (click)="register()">Зарегистрироваться</button>
+    </div>
+
+</div>
+
+
+
+<!-- 
+<div class="example-button-row">
+    <div class="example-container">
         <div>Страница регистрации</div>
     </div>
- <!-- форма ввода емаил -->
     <div class="example-container">
         <mat-form-field class="font">
         <mat-label>Enter your email</mat-label>
@@ -16,15 +61,55 @@
         <mat-form-field class="font">
             <mat-label>Enter your password</mat-label>
             <input matInput type="password" placeholder="Password" [formControl]="password" required>
-            <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
         </mat-form-field>
     </div>
+    
     <div class="example-container">
-        <button class="font" mat-raised-button color="primary" (click)="login()">Войти</button>
+        <mat-form-field class="font">
+            <mat-label>Repeat your password</mat-label>
+            <input matInput type="password" placeholder="Password" [formControl]="confirmPassword" required>
+            <mat-error *ngIf="confirmPassword.invalid">{{ getConfirmPasswordErrorMessage() }}</mat-error>
+        </mat-form-field>
     </div>
 
     <div class="example-container">
-        <button class="font"  mat-raised-button color="primary" routerLink="/regist">Зарегистрироваться</button>
+        <button class="font_reg"  mat-raised-button color="primary" routerLink="/regist">Зарегистрироваться</button>
     </div>
     
-</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    <div class="example-container">
+        <mat-form-field class="font">
+            <mat-label>Enter your password</mat-label>
+            <input matInput type="password" placeholder="Password" [formControl]="password" required>
+            <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="font">
+            <mat-label>Repeate your password</mat-label>
+            <input matInput type="password" placeholder="Password" [formControl]="password" required>
+            <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
+        </mat-form-field>
+    </div> -->
+    <!-- <div class="example-container">
+        <button class="font" mat-raised-button color="primary" (click)="login()">Войти</button>
+    </div> -->

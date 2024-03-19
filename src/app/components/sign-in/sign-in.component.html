@@ -1,6 +1,9 @@
 
-<div>Войти в кабинет</div>
+
 <div class="example-button-row">
+    <div class="example-container">
+        <div>Войти в кабинет</div>
+    </div>
  <!-- форма ввода емаил -->
     <div class="example-container">
         <mat-form-field>
@@ -17,6 +20,7 @@
             <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
         </mat-form-field>
     </div>
+
     <div class="example-container">
         <button mat-raised-button color="primary" (click)="login()">Войти</button>
     </div>
