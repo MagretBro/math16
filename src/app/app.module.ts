@@ -19,6 +19,9 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import {NgIf} from '@angular/common';
 import { RegistComponent } from './components/regist/regist.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { Test2Component } from './components/test2/test2.component';
+
 
 @NgModule({
   declarations: [
@@ -29,9 +32,11 @@ import { RegistComponent } from './components/regist/regist.component';
     ToolbarComponent,
     ModalComponent,
     SignInComponent,
-    RegistComponent
+    RegistComponent,
+    Test2Component
   ],
   imports: [
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

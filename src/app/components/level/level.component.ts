@@ -1,11 +1,19 @@
-import { Component, ElementRef, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { Component, ElementRef, ViewChild, ViewContainerRef, Inject } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { CommonModule } from '@angular/common';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import {NgIf} from '@angular/common';
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @Component({
   selector: 'app-level',
   templateUrl: './level.component.html',
-  styleUrls: ['./level.component.scss']
+  styleUrls: ['./level.component.scss'],
+
 })
 
 export class LevelComponent {
@@ -25,12 +33,23 @@ export class LevelComponent {
 @ViewChild('userAnswerInput') userAnswerInput!: ElementRef;
 @ViewChild('modalContainer', { read: ViewContainerRef }) modalContainer!: ViewContainerRef;
 
-constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+constructor(public dialog: MatDialog) {}
 
   ngAfterViewInit() {
     if (this.userAnswerInput) {
       this.userAnswerInput.nativeElement.focus();
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      data: {data:"Лера молодец"},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
   }
 
   onSelectFirstOperand(selectedVal: number) {
@@ -69,8 +88,8 @@ constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
       this.userAnswer = null;
       if (this.currentExampleIndex === this.multiplicationExamples.length) {
         if (this.correctAnswersCount >= 10) {
-          this.showModal = true;
-          this.loadModalComponent();
+
+          this.openDialog();
         } else {
           alert("Лерочка молодец");
         }
@@ -96,10 +115,5 @@ constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
     this.showModal = false;
   }
 
-  loadModalComponent() {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-    this.modalContainer.clear();
-    const componentRef = this.modalContainer.createComponent(componentFactory);
-  }
 
 }

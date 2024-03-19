@@ -5,6 +5,7 @@ import { LevelComponent } from './components/level/level.component';
 import { MainComponent } from './components/main/main.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { RegistComponent } from './components/regist/regist.component';
+import { Test2Component } from './components/test2/test2.component';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { RegistComponent } from './components/regist/regist.component';
     { path: 'game', component: GameComponent},
     { path: 'level', component: LevelComponent},
     { path: 'sign-in', component: SignInComponent},
-    { path: 'regist', component: RegistComponent}
+    { path: 'regist', component: RegistComponent},
+    { path: 'test2', component: Test2Component}
+
     
     ])
   ],

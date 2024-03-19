@@ -1,50 +1,119 @@
 
 
 
-.example-container mat-form-field + mat-form-field {
-    margin-left: 8px;
-  }
+.example-button-row {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfb7d6;
+  // #deb88f
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Open Sans', sans-serif; /* Пример задания шрифта */
+  font-size: 20px;
+  border-radius: 28px;
+  height: 450px;
+  margin: 0;
+  padding: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+
+// Страница регистрации
+
+.head_form {
+  margin-bottom: 20px;
+  color: #2c2a31;
+  font-size: 22px;
+
+}
+
+
+
+// botton Зарегистрироваться
+
+
+.font_reg {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Open Sans', sans-serif; /* Пример задания шрифта */
+  font-size: 18px;
+  border-style: none;
+  color: #53505c;
+}
+
+
+.example-container button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Open Sans', sans-serif; /* Пример задания шрифта */
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 12px;
+}
+
+
+/* Анимация смены цвета при наведении */
+.example-container button.font_reg:hover {
+  background-color: #0056b3; /* Новый цвет фона */
+  color: #fff; /* Новый цвет шрифта */
+  transition: background-color 0.3s, color 0.3s; /* Плавное изменение цвета */
+}
+
+
+
+
+
+
+
+
+
+
+
+// .example-container mat-form-field + mat-form-field {
+//     margin-left: 8px;
+//   }
   
 
 
 
-  .example-button-row {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #bfb7d6;
-    // #deb88f
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Open Sans', sans-serif; /* Пример задания шрифта */
-    font-size: 20px;
-    border-radius: 28px;
-    height: 300px;
-    margin: 0;
-    padding: 14px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+//   .example-button-row {
+//     flex-direction: column;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: #bfb7d6;
+//     // #deb88f
+//     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Open Sans', sans-serif; /* Пример задания шрифта */
+//     font-size: 20px;
+//     border-radius: 28px;
+//     height: 300px;
+//     margin: 0;
+//     padding: 14px;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
     
-  }
+//   }
 
 
-.example-container {
-    margin-bottom: 16px;
-  }
+// .example-container {
+//     margin-bottom: 16px;
+//   }
 
-.example-container mat-form-field + mat-form-field {
-    margin-left: 8px;
-  }
+// .example-container mat-form-field + mat-form-field {
+//     margin-left: 8px;
+//   }
   
-  .example-right-align {
-    text-align: right;
-  }
+//   .example-right-align {
+//     text-align: right;
+//   }
   
-  input.example-right-align::-webkit-outer-spin-button,
-  input.example-right-align::-webkit-inner-spin-button {
-    display: none;
-  }
+//   input.example-right-align::-webkit-outer-spin-button,
+//   input.example-right-align::-webkit-inner-spin-button {
+//     display: none;
+//   }
   
 //   input.example-right-align {
 //     -moz-appearance: textfield;

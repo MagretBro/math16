@@ -1,2 +1,10 @@
-<p>modal works!</p>
-<app-sign-in></app-sign-in>
+
+<h2 mat-dialog-title>Ты ответила на все вопросы уровня!</h2>
+<div mat-dialog-content>
+  <p>Молодец!!!</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [routerLink]="'/level'" mat-dialog-close>На следующий уровень!</button>
+  <button mat-button [routerLink]="'/'" mat-dialog-close>На главную</button>
+  <button mat-button (click)="onNoClick()">Отмена</button>
+</div>
