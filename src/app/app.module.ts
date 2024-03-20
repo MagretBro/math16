@@ -21,6 +21,7 @@ import { RegistComponent } from './components/regist/regist.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { Test2Component } from './components/test2/test2.component';
+import { CatpageComponent } from './components/catpage/catpage.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { Test2Component } from './components/test2/test2.component';
     ModalComponent,
     SignInComponent,
     RegistComponent,
-    Test2Component
+    Test2Component,
+    CatpageComponent
   ],
   imports: [
     MatDialogModule,

@@ -6,7 +6,7 @@
     <div class="example-container">
         <mat-form-field hintLabel="Max 10 characters">
           <mat-label>Enter your name</mat-label>
-          <input matInput #input maxlength="10" placeholder="Ex. Nougat">
+          <input matInput #input maxlength="10" placeholder="Ex. Nougat" [formControl]="name"  required>
           <mat-hint align="end">{{input.value.length}}/10</mat-hint>
         </mat-form-field>
     </div>

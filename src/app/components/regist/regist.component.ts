@@ -11,6 +11,15 @@ export class RegistComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
   confirmPassword = new FormControl('', [Validators.required]);
+  name = new FormControl('', [Validators.required]);
+
+
+  getErrorName() {
+    if (this.name.hasError('required')) {
+      return 'You must enter a value';
+    }
+    return this.name.hasError('name') ? 'Not a valid name' : '';
+  }
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -31,7 +40,8 @@ export class RegistComponent {
   }
 
   register() {
-    if (this.email.valid && this.password.valid && this.confirmPassword.valid && this.password.value === this.confirmPassword.value) {
+    if (this.name.valid && this.email.valid && this.password.valid && this.confirmPassword.valid && this.password.value === this.confirmPassword.value) {
+      console.log('Name:', this.name.value);
       console.log('Email:', this.email.value);
       console.log('Password:', this.password.value);
     }else{
