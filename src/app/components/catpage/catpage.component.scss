@@ -1,0 +1,99 @@
+.kitten {
+    width: 200px;
+    height: 200px;
+    background: url('/assets/img/extended_may_1_04.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    // animation: moveKitten 2s infinite alternate;
+  }
+  
+  @keyframes moveKitten {
+    0% {
+      transform: translateX(-200px);
+    }
+    100% {
+      transform: translateX(200px);
+    }
+  }
+  
+
+  .bowl {
+    width: 150px;
+    height: 150px;
+    background: url('/assets/img//bowl_pet.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+
+
+  //////
+  /// 
+  .example-button-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    transform: none;
+    // translate(-50%, -50%);
+    
+  }
+  
+  .myclass {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .myclass:first-of-type {
+    margin-right: 50px;
+  }
+  
+  .myclass:last-of-type {
+    margin-left: 50px;
+  }
+  
+  /* Для десктопных устройств */
+  @media (min-width: 768px) {
+    .example-button-row button {
+      width: 100px;
+      height: 70px;
+      font-size: 22px;
+    }
+  }
+  
+  /* Для планшетов */
+  @media (min-width: 480px) and (max-width: 767px) {
+    .example-button-row button {
+      width: 70px;
+      height: 50px;
+      font-size: 16px;
+    }
+  }
+  
+  /* Для мобильных устройств */
+  @media (max-width: 479px) {
+    .example-button-row button {
+      width: 50px;
+      height: 30px;
+      font-size: 14px;
+    }
+  }
+  
+  .example-button-row button {
+    color: #3c3b3f;
+    // color: #7e53db !important;
+    background-color: #bfb7d6;
+    // background: #ffffff linear-gradient(to bottom, #cae7aa 5%, #42d2a7 100%);
+  
+  }
