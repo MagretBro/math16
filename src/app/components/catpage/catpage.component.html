@@ -1,24 +1,14 @@
 
+<section>
 
 <div class="kitten"></div>
 <div class="bowl hidden"></div>
-<div class="bowl" [ngClass]="{'hidden': !showBowlVisible}"></div>
 
-<section>
+
     <div class="example-button-row">
-        <button (click)="toggleBowlVisibility()" class="myclass" mat-raised-button color="primary">Feed Cat</button>
-      <!-- <button (click)="showBowl()" class="myclass" mat-raised-button color="primary">Feed Cat</button> -->
+        <button (click)="showBowl()" class="myclass" mat-raised-button color="primary">Get bowl</button>
     </div>
-</section>
-
-
-
-<!--  ВЕРСИЯ ПЕРЕД ТАСТОМ ГИМИНИ
-<div class="kitten"></div>
-<div class="bowl hidden"></div>
-
-<section>
     <div class="example-button-row">
-      <button (click)="showBowl()" class="myclass" mat-raised-button color="primary">Feed Cat</button>
+        <button (click)="moveKitten()" class="myclassf" mat-raised-button color="primary">Feed Cat</button>
     </div>
-  </section> -->
+  </section>
