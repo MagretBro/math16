@@ -1,4 +1,6 @@
 
+
+// before gpt
 .kitten {
     width: 200px;
     height: 200px;
@@ -7,6 +9,8 @@
     background-repeat: no-repeat;
     background-position: center center;
     animation: moveKitten 3s forwards;
+    // animation: moveKittenDown 7s forwards;
+
   }
   
   @keyframes moveKitten {
@@ -18,39 +22,25 @@
     }
   }
   
+  // if bowl=true
+
+
 
   @keyframes moveKittenDown {
     0% {
       transform: translateY(0px);
     }
     100% {
-      transform: translateY(400px);
+      transform: translateY(370px);
     }
   }
+
   .move-down-400 {
-    position: relative;
-    left: 600px;
-    animation: moveKittenDown 3s forwards;
-  }
+        position: relative;
+        left: 600px;
+        animation: moveKittenDown 3s forwards;
+      }
 
-  // @keyframes moveKittenScale {
-  //   0% {
-  //     transform: scale(1); /* Исходный размер */
-  //   }
-  //   100% {
-  //     transform: scale(1.2); /* Размер увеличивается на 20% */
-  //   }
-  // }
-  
-  // .kitten.scale-up-30 {
-  //   animation: moveKittenScale 3s forwards; /* Применяем анимацию увеличения размера */
-  // }
-
-
-  
-  // .kitten.scale-up-30 {
-  //   transform: scale(1.3); /* Увеличение размера на 30% */
-  // }
 
   .bowl {
     width: 150px;
@@ -61,17 +51,17 @@
     background-position: center center;
     position: absolute;
     left: 600px; /* Позиция по горизонтали 600px от левого края */
-    top: calc(50% + 250px); /* Позиция по вертикали 400px внизу от центра */
+    top: calc(50% + 200px); /* Позиция по вертикали 400px внизу от центра */
     transform: translateY(-50%); /* Центрирование по вертикали */
-    // left: 600px; /* Позиция по горизонтали 600px от левого края */
-    // top: 50%; /* Позиция по вертикали по центру */
-    // transform: translateY(-50%); 
 
   }
   
   .hidden {
     display: none;
   }
+
+
+  
  
 //   /// 
   .example-button-row {
@@ -83,18 +73,10 @@
     position: absolute;
     top: 10%;
     right: 0%;
-    transform: none;
-    // translate(-50%, -50%);
-    
+    transform: none;    
   }
   
   .myclass {
-    border-radius: 20px;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    margin-right: 50px;
-  }
-  .myclassf {
     border-radius: 20px;
     border: none;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -137,7 +119,6 @@
   
   .example-button-row button {
     color: #3c3b3f;
-    margin-left: 10px; /* Примерное расстояние между кнопками */
     // color: #7e53db !important;
     background-color: #bfb7d6;
     // background: #ffffff linear-gradient(to bottom, #cae7aa 5%, #42d2a7 100%);
@@ -147,7 +128,8 @@
 
 
 
-// before gpt
+// is working
+
 // .kitten {
 //     width: 200px;
 //     height: 200px;
@@ -168,6 +150,39 @@
 //   }
   
 
+//   @keyframes moveKittenDown {
+//     0% {
+//       transform: translateY(0px);
+//     }
+//     100% {
+//       transform: translateY(400px);
+//     }
+//   }
+//   .move-down-400 {
+//     position: relative;
+//     left: 600px;
+//     animation: moveKittenDown 3s forwards;
+//   }
+
+//   // @keyframes moveKittenScale {
+//   //   0% {
+//   //     transform: scale(1); /* Исходный размер */
+//   //   }
+//   //   100% {
+//   //     transform: scale(1.2); /* Размер увеличивается на 20% */
+//   //   }
+//   // }
+  
+//   // .kitten.scale-up-30 {
+//   //   animation: moveKittenScale 3s forwards; /* Применяем анимацию увеличения размера */
+//   // }
+
+
+  
+//   // .kitten.scale-up-30 {
+//   //   transform: scale(1.3); /* Увеличение размера на 30% */
+//   // }
+
 //   .bowl {
 //     width: 150px;
 //     height: 150px;
@@ -177,7 +192,7 @@
 //     background-position: center center;
 //     position: absolute;
 //     left: 600px; /* Позиция по горизонтали 600px от левого края */
-//     top: calc(50% + 400px); /* Позиция по вертикали 400px внизу от центра */
+//     top: calc(50% + 250px); /* Позиция по вертикали 400px внизу от центра */
 //     transform: translateY(-50%); /* Центрирование по вертикали */
 //     // left: 600px; /* Позиция по горизонтали 600px от левого края */
 //     // top: 50%; /* Позиция по вертикали по центру */
@@ -205,6 +220,12 @@
 //   }
   
 //   .myclass {
+//     border-radius: 20px;
+//     border: none;
+//     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+//     margin-right: 50px;
+//   }
+//   .myclassf {
 //     border-radius: 20px;
 //     border: none;
 //     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -247,13 +268,12 @@
   
 //   .example-button-row button {
 //     color: #3c3b3f;
+//     margin-left: 10px; /* Примерное расстояние между кнопками */
 //     // color: #7e53db !important;
 //     background-color: #bfb7d6;
 //     // background: #ffffff linear-gradient(to bottom, #cae7aa 5%, #42d2a7 100%);
   
 //   }
-
-
 
 
 
