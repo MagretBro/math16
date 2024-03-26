@@ -3,12 +3,7 @@ import { Component, ElementRef, ViewChild, ViewContainerRef, Inject } from '@ang
 import { ModalComponent } from '../modal/modal.component';
 import { CommonModule } from '@angular/common';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
-import {NgIf} from '@angular/common';
-import {MatButtonModule} from '@angular/material/button';
-import {FormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-level',
@@ -35,9 +30,14 @@ export class LevelComponent {
 @ViewChild('modalContainer', { read: ViewContainerRef }) modalContainer!: ViewContainerRef;
 isGameOver: boolean = true;
 
-constructor(public dialog: MatDialog) {}
+constructor(
+  public dialog: MatDialog,
+  public datas: DataService
+   ) {}
 
   ngAfterViewInit() {
+    this.datas.counter +=10;
+
     if (this.userAnswerInput) {
       this.userAnswerInput.nativeElement.focus();
     }

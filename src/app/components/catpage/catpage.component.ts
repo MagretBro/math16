@@ -1,16 +1,25 @@
 
 
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-catpage',
   templateUrl: './catpage.component.html',
   styleUrls: ['./catpage.component.scss']
 })
-export class CatpageComponent {
+export class CatpageComponent implements OnInit {
+
+  constructor(
+    public datas: DataService
+     ) {}
 
   showBowlVisible: boolean = false;
+
+  ngOnInit(): void {
+    console.log(this.datas.counter)
+  }
 
     toggleBowlVisibility() {
       this.showBowlVisible = !this.showBowlVisible;

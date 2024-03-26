@@ -22,6 +22,7 @@ import { RegistComponent } from './components/regist/regist.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { Test2Component } from './components/test2/test2.component';
 import { CatpageComponent } from './components/catpage/catpage.component';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -51,7 +52,7 @@ import { CatpageComponent } from './components/catpage/catpage.component';
     MatInputModule,
     NgIf
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 
 })
