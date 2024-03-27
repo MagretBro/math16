@@ -1,6 +1,4 @@
 
-
-
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
@@ -16,10 +14,28 @@ export class CatpageComponent implements OnInit {
      ) {}
 
   showBowlVisible: boolean = false;
+  showScaleVisible: boolean = false;
 
   ngOnInit(): void {
     console.log(this.datas.counter)
+
   }
+  
+
+  toggleScaleVisibility() {
+    this.showScaleVisible = !this.showScaleVisible;
+  }
+  showScale() {
+    const scale = document.querySelector('.scale');
+    if (this.datas.counter <= 0) {
+      scale?.classList.remove('hidden');
+      } else {
+        console.log('datas element not found');
+      }
+  }
+
+
+
 
     toggleBowlVisibility() {
       this.showBowlVisible = !this.showBowlVisible;
@@ -40,7 +56,7 @@ export class CatpageComponent implements OnInit {
       console.log('Bowl element not found');
     }
       }
-    }
+}
 
 //   showBowl() {
 //     const bowl = document.querySelector('.bowl');

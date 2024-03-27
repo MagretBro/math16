@@ -1,5 +1,3 @@
-
-
 .example-button-row {
     display: flex;
     flex-direction: column;
@@ -7,6 +5,7 @@
     justify-content: center;
     align-items: center;
     margin: 0;
+    margin-bottom: 10%;
     padding: 20px; /* Добавим немного отступа для красоты */
 }
 
@@ -21,7 +20,7 @@
     // border-radius: 20px;
     // border: none;
     // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    font-size: 20px;
+    font-size: 22px;
     padding: 10px; /* Добавим немного отступа для красоты */
 
   }
@@ -69,21 +68,28 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    // min-height: 50vh;
-    // justify-content: center;
     align-items: center;
+    justify-content: center; /* Выравнивание по центру по вертикали */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Open Sans', sans-serif; /* Пример задания шрифта */
     font-size: 20px;
     border-radius: 20px;
     border: none;
     // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-
     position: relative;
 }
 
 .flex-item {
     flex: 1;
+    justify-content: center;
+    align-items: center;
     // width: 100px;
+}
+
+.name-1 {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-1 {
@@ -137,9 +143,18 @@
     transition: background-color 0.3s, color 0.3s; /* Плавное изменение цвета */
 }
 
+.flex-container scale {
+  justify-content: flex-end; /* Выравнивание по правому краю */
+
+}
+
 .scale {
     display: flex;
-    margin-top: 10px;
+    justify-content: center; /* Выравнивание по центру по вертикали */
+
+    // margin-left: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .scale-item {
@@ -148,19 +163,9 @@
     margin-right: 5px;
     border: 1px solid #ccc;
     background-color: #fff;
+    // border-radius: 20%;
 }
 
 .scale-item.correct {
     background-color: green;
 }
-
-// .section {
-//     width: 100%;
-//     height: 20px;
-//     background-color: #fff;
-//     border-bottom: 1px solid #999;
-// }
-
-// .section.completed {
-//     background-color: #4CAF50;
-// }
