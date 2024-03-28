@@ -1,7 +1,8 @@
 
 <h2 mat-dialog-title>Ты ответила на все вопросы уровня!</h2>
 <div mat-dialog-content>
-  <p>Лера Молодец!!!</p>
+  <p>{{data.data}}</p>
+  <!-- <p>У тебя {{ data.feedCatCounter }} чашек для кота</p> -->
 </div>
 <div mat-dialog-actions>
   <button mat-button [routerLink]="'/level'" mat-dialog-close>Next!</button>

@@ -26,6 +26,7 @@
                     </div> 
             </div>
             <div class="scale">
+                <!-- <отвечает за подсчет и отображения числа верных ответов scaleitems & correct > -->
                     <div *ngFor="let item of scaleItems; let i = index" class="scale-item" [ngClass]="{'correct': i < correctAnswersCount}">
                 </div>
             </div>
