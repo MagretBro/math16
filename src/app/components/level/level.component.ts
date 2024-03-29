@@ -60,6 +60,8 @@ isGameOver: boolean = true;
     this.selectedFirstOperand = selectedVal;  // level
     this.generateMultiplicationExamples();
     this.currentExampleIndex = 0;   // индекс выбранного числа
+    // очистка закрашивания перед началом раунда
+    this.correctAnswersCount = 0;
     this.userAnswer = null;
     this.isGameOver = false;
     if (this.userAnswerInput) {

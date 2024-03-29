@@ -58,7 +58,9 @@ export class CatpageComponent implements OnInit {
     }
     //let score = parseInt(localStorage.getItem('score') || '0'); // Получаем текущее значение score из localStorage и парсим его в число
     if (this.score >= 1) { // Проверяем, что score больше или равен 1
-      console.log(this.score--);
+      // console.log(this.score--);
+      console.log('score-1');
+
       this.score--; // Уменьшаем score на 1
       localStorage.setItem('score', this.score.toString()); // Записываем новое значение score в localStorage
     }
