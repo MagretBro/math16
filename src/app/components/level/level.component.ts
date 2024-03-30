@@ -1,4 +1,3 @@
-
 import { Component, ElementRef, ViewChild, ViewContainerRef, Inject } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
@@ -18,12 +17,10 @@ export class LevelComponent {
   currentExampleIndex: number = 0;
   userAnswer: string | null = null;
   correctAnswers: number = 0;
-  squares: number[] = Array(3).fill(0); // Было заменено с 10 на 3
+  squares: number[] = Array(10).fill(0); // Было заменено с 10 на 3
   correctAnswersCount: number = 0;
-  scaleItems: number[] = Array(3).fill(0);  // Было заменено с 10 на 3
+  scaleItems: number[] = Array(10).fill(0);  // Было заменено с 10 на 3
   showModal: boolean = false;
-
-
 
 
 @ViewChild('userAnswerInput') userAnswerInput!: ElementRef;
@@ -73,8 +70,8 @@ isGameOver: boolean = true;
   generateMultiplicationExamples() {
     if (this.selectedFirstOperand !== null) {
       this.multiplicationExamples = []; // массив, куда попадают ответы
-      // const SecondArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-      const SecondArray: number[] = [1, 2, 3];  // Было заменено с 10 на 3
+      const SecondArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      // const SecondArray: number[] = [1, 2, 3];  // Было заменено с 10 на 3
       // для каждого вопроса генерация: число из (SecondArray) * на выбранный уровень, например на 2
       SecondArray.forEach((secondVal) => {
         this.multiplicationExamples.push(`${this.selectedFirstOperand} * ${secondVal}`);
@@ -107,7 +104,7 @@ isGameOver: boolean = true;
         // попытка прописать в localStorage число ответов с сохранением статистики и учетом счетчика
         // localStorage.setItem('score', 100);
         let score = parseInt(localStorage.getItem('score') || '0');
-        if (this.correctAnswersCount % 3 === 0 && this.correctAnswersCount > 0) {  // Было заменено с 10 на 3 // тут заменить на 10!!!
+        if (this.correctAnswersCount % 10 === 0 && this.correctAnswersCount > 0) {  // Было заменено с 10 на 3 // тут заменить на 10!!!
           score += 1;
           localStorage.setItem('score', score.toString());
         }
