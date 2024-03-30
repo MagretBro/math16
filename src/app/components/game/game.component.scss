@@ -1,0 +1,171 @@
+.example-button-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* Добавляем обертке возможность переноса на новую строку */
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 10%;
+    padding: 20px; /* Добавим немного отступа для красоты */
+}
+
+.example-button-row button {
+    color: #7e53db !important;
+    background: #ffffff ;
+    margin: 5px; /* Добавим немного отступа между кнопками */
+
+  }
+
+  .title_header {
+    // border-radius: 20px;
+    // border: none;
+    // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    padding: 10px; /* Добавим немного отступа для красоты */
+
+  }
+  
+
+  .title_row {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+/* Для десктопных устройств */
+@media (min-width: 768px) {
+    .example-button-row button {
+      width: 50px;
+      height: 20px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Для планшетов */
+  @media (min-width: 480px) and (max-width: 767px) {
+    .example-button-row button {
+      width: 20px;
+      height: 15px;
+      font-size: 10px;
+    }
+  }
+  
+  /* Для мобильных устройств */
+  @media (max-width: 479px) {
+    .example-button-row button {
+      width: 20px;
+      height: 15px;
+      font-size: 10px;
+    }
+  }
+
+
+// game block
+
+
+.flex-container {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; /* Выравнивание по центру по вертикали */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Open Sans', sans-serif; /* Пример задания шрифта */
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.flex-item {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    // width: 100px;
+}
+
+.name-1 {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-item-1 {
+    margin: 5px;
+    font-size: 30px;
+    align-items: center;
+}
+
+.inner-item-2 input[type="number"] {
+    height: 40px; // Увеличиваем высоту
+    margin: 5px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+
+.inner-item-3 button {
+    height: 40px; // Увеличиваем высоту
+    margin: 10px;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    font-size: 16px; /* Размер шрифта */
+    // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #999; /* Цвет шрифта */
+}
+
+/* Центрирование текста-подсказки в поле ввода */
+.inner-item-2 input[type="number"]::placeholder {
+    text-align: center;
+}
+
+/* Изменение размера и цвета шрифта текста-подсказки */
+.inner-item-2 input[type="number"]::placeholder {
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #999; /* Цвет шрифта */
+}
+
+/* Анимация смены цвета при наведении */
+.inner-item-3 button.animated-button:hover {
+    background-color: #0056b3; /* Новый цвет фона */
+    color: #fff; /* Новый цвет шрифта */
+    transition: background-color 0.3s, color 0.3s; /* Плавное изменение цвета */
+}
+
+.flex-container scale {
+  justify-content: flex-end; /* Выравнивание по правому краю */
+
+}
+
+.scale {
+    display: flex;
+    justify-content: center; /* Выравнивание по центру по вертикали */
+
+    // margin-left: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.scale-item {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    // border-radius: 20%;
+}
+
+.scale-item.correct {
+    background-color: green;
+}

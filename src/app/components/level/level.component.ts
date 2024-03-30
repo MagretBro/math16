@@ -1,3 +1,4 @@
+
 import { Component, ElementRef, ViewChild, ViewContainerRef, Inject } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
@@ -21,7 +22,6 @@ export class LevelComponent {
   correctAnswersCount: number = 0;
   scaleItems: number[] = Array(10).fill(0);  // Было заменено с 10 на 3
   showModal: boolean = false;
-
 
 @ViewChild('userAnswerInput') userAnswerInput!: ElementRef;
 @ViewChild('modalContainer', { read: ViewContainerRef }) modalContainer!: ViewContainerRef;

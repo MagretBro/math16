@@ -1,1 +1,67 @@
-<p>game works!</p>
+
+<section>
+    <div class="example-button-row">
+      <div class="title_header">Таблица деления на: </div>
+      <div>
+        <button class="title_row" *ngFor="let operand of myFirstOperands" mat-raised-button color="primary" 
+                (click)="onSelectFirstOperand(operand)">{{ operand }}</button>
+      </div>
+    </div>
+  </section>
+  
+  <div class="flex-container" *ngIf="!isGameOver">
+    <div *ngIf="selectedFirstOperand !== null">
+      <div class="flex-item name-1">Пример деления на {{ selectedFirstOperand }}: </div>
+      <div class="flex-item item-1">
+        <div class="inner-item inner-item-1">
+          {{ divisionExamples[currentExampleIndex] }} =
+        </div>
+        <div class="inner-item inner-item-2">
+          <input #userAnswerInput type="number" [(ngModel)]="userAnswer" placeholder="Введите ответ"
+                 (keypress)="handleKeyPress($event)">
+        </div>
+        <div class="inner-item inner-item-3">
+          <button (click)="checkAnswer()" class="animated-button">Проверить ответ</button>
+        </div>
+      </div>
+      <div class="scale">
+        <div *ngFor="let item of scaleItems; let i = index" class="scale-item" [ngClass]="{'correct': i < correctAnswersCount}">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- 
+
+<section>
+    <div class="example-button-row">
+        <div class="title_header">Таблица деления на: </div>
+        <div>
+            <button class="title_row" *ngFor="let operand of myFirstOperands" mat-raised-button color="primary" 
+                (click)="onSelectFirstOperand(operand)">{{ operand }}</button>
+        </div>
+    </div>
+</section>
+
+<div class="flex-container" *ngIf="selectedFirstOperand !== null && !isGameOver">
+    <div *ngIf="selectedFirstOperand !== null">
+        <div class="flex-item name-1">Пример деления на {{ selectedFirstOperand }}: </div>
+        <div class="flex-item item-1">
+            <div class="inner-item inner-item-1">
+                {{ divisionExamples[currentExampleIndex] }} =
+            </div>
+            <div class="inner-item inner-item-2">
+                <input #userAnswerInput type="number" [(ngModel)]="userAnswer" placeholder="Введите ответ"
+                    (keypress)="handleKeyPress($event)">
+            </div>
+            <div class="inner-item inner-item-3">
+                <button (click)="checkAnswer()" class="animated-button">Проверить ответ</button>
+            </div>
+        </div>
+        <div class="scale">
+            <div *ngFor="let item of scaleItems; let i = index" class="scale-item" [ngClass]="{'correct': i < correctAnswersCount}">
+            </div>
+        </div>
+    </div>
+</div> -->
