@@ -74,29 +74,11 @@ export class GameComponent {
       secondArray.forEach((secondVal) => {
         if (this.selectedFirstOperand !== null && this.selectedFirstOperand !== 0) {
           this.divisionExamples.push(`${this.selectedFirstOperand * secondVal} ÷ ${this.selectedFirstOperand}`);
-}
+        }
       });
       this.shuffleArray(this.divisionExamples);
     }
 }
-  // generateDivisionExamples() {
-  //   console.log('second generate division');
-
-  //   if (this.selectedFirstOperand !== null) {
-  //     console.log('second generate INSIDE');
-  //     this.divisionExamples = [];
-  //     const secondArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  //     secondArray.forEach((secondVal) => {
-  //       if (this.selectedFirstOperand !== null && this.selectedFirstOperand !== 0) {
-  //         this.divisionExamples.push(`${this.selectedFirstOperand * secondVal} ÷ ${this.selectedFirstOperand}`);
-  //       }
-  //     });
-  //     this.shuffleArray(this.divisionExamples)
-  //     console.log('second generate INSIDE II');;
-  //   }
-  //   console.log('third');
-
-  // }
 
   shuffleArray(array: any[]) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -106,19 +88,25 @@ export class GameComponent {
   }
 
   checkAnswer() {
-    console.log('4th check answer');
-
-    if (this.userAnswer === (this.currentExampleIndex + 1).toString()) {
-      this.currentExampleIndex++;
+    const example = this.divisionExamples[this.currentExampleIndex];
+    const result = parseInt(example.split('=')[0].trim().split(' ')[0]) / parseInt(example.split('=')[0].trim().split(' ')[2]);
+    
+    if (parseInt(this.userAnswer || '') === result) {
+      // Увеличиваем счетчик правильных ответов
       this.correctAnswersCount++;
+      // Переходим к следующему примеру
+      this.currentExampleIndex++;
+      // Сбрасываем значение введенного пользователем ответа
       this.userAnswer = null;
+      // Проверяем, если количество правильных ответов достигло 10 или текущий пример последний
       if (this.currentExampleIndex === this.divisionExamples.length || this.correctAnswersCount >= 10) {
         this.endGame();
       }
     } else {
+      // Если ответ неверный, выводим сообщение об ошибке
       alert("Попробуйте еще раз!");
     }
-  }
+}
 
   handleKeyPress(event: KeyboardEvent) {
     if (event.key === 'Enter') {
